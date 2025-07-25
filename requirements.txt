@@ -1,0 +1,3 @@
+https://purplelab-pip-repository.s3.amazonaws.com/purplelab_python_api_tools-2.1.8-py3-none-any.whl
+gunicorn==23.0.0
+pymysql==1.1.1
