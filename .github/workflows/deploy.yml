@@ -7,6 +7,27 @@ on:
     branches: [ Dev, main ]
 
 jobs:
+  github-structure:
+    name: Github Structure
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Display Repository Structure
+        run: |
+          echo "🗂️ Repository Structure After Checkout:"
+          echo "📁 Working Directory: $(pwd)"
+          echo "📁 Full Path: ${{ github.workspace }}"
+          echo ""
+          echo "🌳 Directory Tree:"
+          tree . || ls -la
+          echo ""
+          echo "📋 Detailed Structure:"
+          find . -type f -name "*.py" -o -name "*.json" -o -name "*.yml" -o -name "*.yaml" | head -20
   test:
     runs-on: ubuntu-latest
     
